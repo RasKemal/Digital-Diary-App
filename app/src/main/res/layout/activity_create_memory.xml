@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context=".activities.CreateMemoryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="20dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true">
+
+
+            <ImageView
+                android:id="@+id/back_btn"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="35dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_left_arrow"
+                app:layout_constraintBaseline_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/colorIcons">
+            </ImageView>
+
+            <EditText
+                android:id="@+id/inputTitle"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="30dp"
+                android:background="@null"
+                android:hint="Enter memory title.."
+                android:textStyle="bold"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/colorIcons"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="22sp"
+                app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+
+
+            <TextView
+                android:id="@+id/dateTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:includeFontPadding="false"
+                android:textColor="@color/colorIcons"
+                android:textSize="14sp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintEnd_toEndOf="@+id/inputTitle"
+                app:layout_constraintStart_toStartOf="@+id/inputTitle"
+                app:layout_constraintTop_toBottomOf="@+id/inputTitle"/>
+
+            <EditText
+                android:id="@+id/inputMemory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="Enter your memory..."
+                android:importantForAutofill="no"
+                android:includeFontPadding="false"
+                android:inputType="textMultiLine"
+                android:minHeight="170dp"
+                android:textColor="@color/colorIcons"
+                android:textColorHint="@color/colorTextHint"
+                android:textSize="18sp"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateTime" />
+
+
+            <LinearLayout
+                android:id="@+id/addPassword"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shareContent"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_lock"
+                    app:tint="@color/colorIcons" />
+
+                <EditText
+                    android:id="@+id/inputPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:hint="Set Password..."
+                    android:includeFontPadding="false"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorIcons"
+                    android:textColorHint="@color/colorTextHint"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/addImage"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputMemory"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_img"
+                    app:tint="@color/colorIcons" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:includeFontPadding="false"
+                    android:text="Upload Image"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/resultImg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/app_name"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/addImage"/>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/addLocation"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/resultImg">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_location"
+                    app:tint="@color/colorIcons" />
+
+                <TextView
+                    android:id="@+id/location_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:includeFontPadding="false"
+                    android:text="Enter Location"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/createPdf"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addLocation">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_pdf"
+                    app:tint="@color/colorIcons" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:includeFontPadding="false"
+                    android:text="Get PDF"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/shareContent"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_margin="20dp"
+                android:gravity="center_vertical"
+                android:visibility="gone"
+                android:orientation="horizontal"
+                tools:ignore="MissingConstraints"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/createPdf">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_baseline_share_24"
+                    app:tint="@color/colorIcons" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:includeFontPadding="false"
+                    android:text="Share Memory"
+                    android:textColor="@color/colorIcons"
+                    android:textSize="17sp" />
+
+            </LinearLayout>
+
+
+
+
+            <Button
+                android:id="@+id/saveBtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                app:backgroundTint="@null"
+                android:background="@drawable/bg_custom"
+                android:text="Save To Diary"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/colorPrimary"
+                android:textSize="21sp"
+                app:layout_constraintBaseline_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/addPassword"
+                tools:ignore="TextViewEdits" />
+
+            <Button
+                android:id="@+id/deletebtn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="18dp"
+                android:layout_marginEnd="30dp"
+                android:layout_marginBottom="30dp"
+                app:backgroundTint="@null"
+                android:visibility="gone"
+                android:background="@drawable/bg_delete"
+                android:text="Delete Memory"
+                android:includeFontPadding="false"
+                android:inputType="text"
+                android:textColor="@color/colorDelete"
+                android:textSize="17sp"
+                app:layout_constraintBaseline_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/saveBtn"
+                tools:ignore="TextViewEdits" />
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

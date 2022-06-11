@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/deleteConf"
+    android:layout_gravity="center"
+    android:layout_margin="15dp"
+    android:background="@drawable/dialog_bg">
+
+    <TextView
+        android:id="@+id/deleteTitle"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="16dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:includeFontPadding="false"
+        android:text="You are about to delete a memory."
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <TextView
+        android:id="@+id/deleteText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="3dp"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:text="Are you sure?"
+        android:textColor="@color/black"
+        android:textSize="17dp"
+        app:layout_constraintTop_toBottomOf="@id/deleteTitle"/>
+
+    <TextView
+        android:id="@+id/deleteMemory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="12dp"
+        android:includeFontPadding="false"
+        android:padding="12dp"
+        android:text="DELETE"
+        android:textAllCaps="true"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteText"/>
+
+    <TextView
+        android:id="@+id/cancelDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="12dp"
+        android:includeFontPadding="false"
+        android:padding="12dp"
+        android:textAllCaps="true"
+        android:text="CANCEL"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/deleteText"/>
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
